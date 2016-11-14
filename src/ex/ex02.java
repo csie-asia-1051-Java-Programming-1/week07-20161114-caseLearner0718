@@ -1,21 +1,21 @@
-package ex;
+ï»¿package ex;
 /*
  * Date: 2016/11/14
- * Author: 105021025 ¬x¥ß¦t
+ * Author: 105021025 æ´ªç«‹å®‡
  */
 import java.util.Scanner;
-public class ex01 {
+public class ex02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("½Ð¿é¤JÁ`¦@´Xµ§¸ê®Æ");
+		System.out.println("è«‹è¼¸å…¥ç¸½å…±å¹¾ç­†è³‡æ–™");
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
 		float[] val = new float[n];
 		float sum = 0;
 		float tal=0;
 		for(int a=0;a<n;a++){
-			System.out.println("½Ð¿é¤J²Ä" + (a+1) + "µ§¸ê®Æ");
+			System.out.println("è«‹è¼¸å…¥ç¬¬" + (a+1) + "ç­†è³‡æ–™");
 			val[a] = scn.nextFloat();
 		}
 		for(int a=0;a<n;a++){
@@ -23,12 +23,16 @@ public class ex01 {
 		}
 		sum/=n;
 		for(int a=0;a<n;a++){
-			tal += fun(val[a],sum);
+			tal += var(val[a],sum);
 		}
-		System.out.println(tal/n);
+		System.out.println(std(tal/n));
 	}
-	public static float fun(float val,float sum){
+	public static float var(float val,float sum){
 		val = (val-sum)*(val-sum);
 		return val;
+	}
+	public static double std(double x){
+		x=Math.pow(x,1/2);
+		return x;
 	}
 }
